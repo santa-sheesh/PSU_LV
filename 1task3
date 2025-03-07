@@ -1,1 +1,22 @@
+numbers = []
+
+while True:
+    user_input = input("Unesite broj ili 'Done' za kraj: ")
+    if user_input.lower() == "Done":
+        break
+    try:
+        number = float(user_input)
+        numbers.append(number)
+    except ValueError:
+        print("Neispravan unos")
+
+if numbers:
+    print(f"Broj unesenih brojeva: {len(numbers)}")
+    print(f"Srednja vrijednost: {sum(numbers) / len(numbers)}")
+    print(f"Minimalna vrijednost: {min(numbers)}")
+    print(f"Maksimalna vrijednost: {max(numbers)}")
+    numbers.sort()
+    print(f"Sortirana lista: {numbers}")
+else:
+    print("Niste unijeli niti jedan broj.")
 
