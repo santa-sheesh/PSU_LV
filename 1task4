@@ -1,21 +1,22 @@
-file_name = input("Ime datoteke: ")
+total = 0
+count = 0
 
-try:
-    with open(file_name, 'r') as file:
-        total = 0
-        count = 0
-        for line in file:
-            if line.startswith("X-DSPAM-Confidence:"):
-                try:
-                    confidence = float(line.split(":")[1].strip())
-                    total += confidence
-                    count += 1
-                except ValueError:
-                    continue
-        if count > 0:
-            print(f"Average X-DSPAM-Confidence: {total / count}")
-        else:
-            print("Nema pronađenih linija s X-DSPAM-Confidence.")
-except FileNotFoundError:
-    print("Datoteka nije pronađena.")
+while True:
+    user_input = input("ime datoteke: ")
 
+    fhand = open(user_input)
+
+    for line in fhand:
+        if line.startswith("X-DSPAM-Confidence:"):
+        
+            try:
+                broj = float(line.split(":")[1].strip())
+                total += broj
+                count += 1
+            except ValueError:
+                print("Greska")
+
+    if count > 0:
+        
+        print("Prosijek X-DSPAM-Confidence:", total / count)
+	
