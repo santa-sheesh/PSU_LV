@@ -1,10 +1,7 @@
-def total_euro(hours, rate):
-    return hours * rate
 
-try:
-    hours = float(input("Radni sati: "))
-    rate = float(input("Placa: "))
-    total = total_euro(hours, rate)
-    print(f"Ukupno: {total} eura")
-except ValueError:
-    print("Nisu ispravni brojevi")
+broj_sati = input()
+placa = input()
+
+print("Radni sati: ",broj_sati)
+print("eura/h: ",placa)
+print("Ukupno: ",int(broj_sati)*int(placa))
