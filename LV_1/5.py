@@ -1,0 +1,26 @@
+import string
+
+rjecnik = {}
+
+file = open("song.txt")
+
+rjecnik = {}
+
+for line in file:
+      
+        line = line.translate(str.maketrans('', '', string.punctuation)).lower()
+        
+       
+        words = line.split()
+        
+       
+        for word in words:
+            rjecnik[word] = rjecnik.get(word, 0) + 1
+
+
+single_occurrence_words = [word for word, count in rjecnik.items() if count == 1]
+
+print("Rijeci koje se pojavljuju jednom:", single_occurrence_words)
+
+
+file.close()
