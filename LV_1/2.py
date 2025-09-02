@@ -1,0 +1,26 @@
+try:
+    broj = float(input())
+
+    while True:
+        if(broj < 0.0 or broj > 1.0):
+            print("Broj nije u [0.0 i 1.0] intervalu")
+            break
+        elif(broj >= 0.9 ):
+            print("A")
+            break
+        elif(broj >= 0.8 ):
+            print("B")
+            break
+        elif(broj >= 0.7 ):
+            print("C")
+            break
+        elif(broj >= 0.6 ):
+            print("D")
+            break
+        elif(broj < 0.6):
+            print("F")
+            break
+        
+    
+except ValueError:
+    print("Greska, niste utipkali broj")
